@@ -16,41 +16,43 @@
       <!-- main app content -->
       <main class="main-content">
         <!-- main form -->
-        <form class="form" action="">
-          <input
-            class="form__input"
-            id="inputMessage"
-            placeholder="Ingresa el texto aqui"
-            name="inputMessage"
-            type="text"
-          />
-        </form>
-        <!-- bottom content -->
-        <div class="bottom-content">
-          <div class="caption">
-            <img
-              src="assets/icons/exclamation-icon.png"
-              alt="exclamation-icon"
-            />
-            <span class="caption__span"
-              ><small>Solo leras minúsculas y sin acentos</small></span
-            >
-          </div>
-          <!-- buttons -->
-          <div class="button__container">
-            <button
-              class="button__item--dark"
-              id="safeInfoButton"
-              onclick="encryptInfo()"
-            >
-              Encriptar</button
-            ><button
-              class="button__item--light"
-              id="safeInfoButton"
-              onclick="decryptInfo()"
-            >
-              Desencriptar
-            </button>
+        <div class="main-content__wrapper">
+          <form class="form" action="">
+            <textarea
+              class="form__input"
+              id="inputMessage"
+              placeholder="Ingresa el texto aqui"
+              name="inputMessage"
+              type="textarea"
+            ></textarea>
+          </form>
+          <!-- bottom content -->
+          <div class="bottom-content">
+            <div class="caption">
+              <img
+                src="assets/icons/exclamation-icon.png"
+                alt="exclamation-icon"
+              />
+              <span class="caption__span"
+                ><small>Solo leras minúsculas y sin acentos</small></span
+              >
+            </div>
+            <!-- buttons -->
+            <div class="button__container">
+              <button
+                class="button__item--dark"
+                id="safeInfoButton"
+                onclick="encryptInfo()"
+              >
+                Encriptar</button
+              ><button
+                class="button__item--light"
+                id="safeInfoButton"
+                onclick="decryptInfo()"
+              >
+                Desencriptar
+              </button>
+            </div>
           </div>
         </div>
       </main>
@@ -58,14 +60,14 @@
       <!-- side content -->
       <div class="side-content">
         <!-- if content -->
-        <div class="side-content--active hidden">
-          <div class="side-content__text--active"></div>
+        <div id="sideContentCrypted" class="side-content--active hidden">
+          <div id="sideContentText" class="side-content__text--active"></div>
           <div class="button__container">
-            <button class="button__item--light">Copiar</button>
+            <button onclick="copyTextToClipBoard()" class="button__item--light">Copiar</button>
           </div>
         </div>
         <!-- if not content -->
-        <div class="side-content--inactive centered-both">
+        <div id="sideContentEmpty" class="side-content--inactive centered-both">
           <img
             class="side-content__img"
             src="/assets/images/doll.png"

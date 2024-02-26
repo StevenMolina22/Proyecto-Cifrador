@@ -18,14 +18,22 @@ body {
 }
 
 .main-content {
-  background-color: antiquewhite;
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+.main-content .main-content__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
+  height: 100%;
+}
+.main-content .form {
+  align-self: flex-start;
 }
 .main-content .bottom-content {
   display: flex;
@@ -41,8 +49,10 @@ body {
   width: 400px;
   height: 100%;
   border-radius: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle dark shadow */
 }
 .side-content .side-content--inactive {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -56,7 +66,20 @@ body {
 .side-content .side-content__p {
   color: var(--gray-400);
 }
-@media (max-width: 800px) {
+.side-content .side-content--active {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 1rem;
+}
+.side-content .side-content__text--active {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1300px) {
   .app {
     flex-direction: column;
   }
@@ -64,7 +87,10 @@ body {
     width: 100%;
     height: 70%;
   }
-  .button__container {
+  .main-content .bottom-content {
+    gap: 0.5rem;
+  }
+  .main-content .button__container {
     gap: 1rem;
   }
   .side-content {
@@ -92,20 +118,33 @@ body {
   }
 }
 /* specific items */
+.form {
+  width: 100%;
+}
+
 #inputMessage,
 #inputMessage:hover {
+  width: 100%;
   padding: 1rem;
-  height: auto;
   border-radius: 24px;
   font-size: 2rem;
   color: var(--dark-blue-300);
   background-color: transparent;
+  resize: vertical;
   border: none;
+  outline: none;
 }
 
 #inputMessage:hover,
-#inputMessage:active {
-  color: red;
+#inputMessage:active,
+#inputMessage:focus {
+  color: var(--dark-blue-300);
+  border: none;
+  outline: none;
+}
+
+.hidden {
+  display: none !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
