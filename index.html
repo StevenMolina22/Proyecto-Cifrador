@@ -1,34 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyecto Cifrado</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <div class="text__container m-1"><h1>Proyecto Cifrado</h1></div>
-  <!-- <div class="container centered-both">
-    <button class="button__item" id="mainButton" onclick="mainfunction()">Click Me</button>
-  </div> -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto Cifrado</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <section class="app">
+      <!-- logo -->
+      <div class="logo">
+        <img class="logo__img" src="assets/images/logo.png" alt="alura-logo" />
+      </div>
 
-  <div class="centered-both m-1">
-  <label for="username">Encrypt: </label>
-  <input id="username" name="username" type="text" />
-  </div>
+      <!-- main app content -->
+      <main class="main-content">
+        <!-- main form -->
+        <form class="form" action="">
+          <input
+            class="form__input"
+            id="inputMessage"
+            placeholder="Ingresa el texto aqui"
+            name="inputMessage"
+            type="text"
+          />
+        </form>
+        <!-- bottom content -->
+        <div class="bottom-content">
+          <div class="caption">
+            <img
+              src="assets/icons/exclamation-icon.png"
+              alt="exclamation-icon"
+            />
+            <span class="caption__span"
+              ><small>Solo leras minúsculas y sin acentos</small></span
+            >
+          </div>
+          <!-- buttons -->
+          <div class="button__container">
+            <button
+              class="button__item--dark"
+              id="safeInfoButton"
+              onclick="encryptInfo()"
+            >
+              Encriptar</button
+            ><button
+              class="button__item--light"
+              id="safeInfoButton"
+              onclick="decryptInfo()"
+            >
+              Desencriptar
+            </button>
+          </div>
+        </div>
+      </main>
 
-  <div class="container centered-both">
-    <button class="button__item" id="safeInfoButton" onclick="encryptInfo()">Safe</button>
-  </div>
-  <div class="centered-both m-1">
-  <label for="username">Decrypt: </label>
-  <input id="decryptInput" name="username" type="text" />
-  </div>
+      <!-- side content -->
+      <div class="side-content">
+        <!-- if content -->
+        <div class="side-content--active hidden">
+          <div class="side-content__text--active"></div>
+          <div class="button__container">
+            <button class="button__item--light">Copiar</button>
+          </div>
+        </div>
+        <!-- if not content -->
+        <div class="side-content--inactive centered-both">
+          <img
+            class="side-content__img"
+            src="/assets/images/doll.png"
+            alt="doll"
+            class="doll__img"
+          />
+          <div class="side-content__text text__container">
+            <p class="side-content__p--medium">
+              <strong>Ningún mensaje fue encontrado</strong>
+            </p>
+            <p class="side-content__p">
+              Ingresa el que desees encriptar o desencriptar
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="container centered-both">
-    <button class="button__item" id="safeInfoButton" onclick="decryptInfo()">Safe</button>
-  </div>
-
-  <script src="scripts.js"></script>
-</body>
+    <script src="scripts.js"></script>
+  </body>
 </html>

@@ -58,7 +58,7 @@
 
 function encryptInfo(){
   // dom selection
-  const labelInput = document.querySelector("#username");
+  const labelInput = document.querySelector("#inputMessage");
   const labelInputValue = labelInput.value;
   // variables and const for later
   let message1 = labelInputValue;
@@ -89,12 +89,13 @@ function encryptInfo(){
   }
   // transform the array into str
   encryptedMessage = encryptedMessageArray.join("")
-  alert(`${encryptedMessage}`);
+  alert(`encrypted message: ${encryptedMessage}`);
 }
 
 function decryptInfo(){
-  const labelInput2 = document.querySelector("#decryptInput");
+  const labelInput2 = document.querySelector("#inputMessage");
   const labelInput2Value = labelInput2.value;
+  // alert(labelInput2Value);
 
   const keyWords = ["ai", "enter", "imes", "ober", "ufat"];
   let keys2 = {
@@ -106,17 +107,10 @@ function decryptInfo(){
   }
 
   let message2 = labelInput2Value;
-  // const message2Length = message2.length;
-  // let message2Array = [];
-  // let decryptedMessage2Array = [];
-  // let decrypedMessage2;
   for (const item of keyWords){
     if (message2.includes(item)) {
-      // alert(`the keyword is: ${item}`);
-      // alert(`the item is: ${keys2[item]}`);
-      // alert(`the message is ${message2.replace(item, keys2[item])}`)
-      message2 = message2.replace(item, keys2[item]);
+      message2 = message2.replaceAll(item, keys2[item]);
     }
   }
-  alert(`the decrypted message is: ${message2}`);
+  alert(`decrypted message: ${message2}`);
 }

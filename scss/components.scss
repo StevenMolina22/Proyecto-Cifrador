@@ -1,0 +1,70 @@
+/* buttons containers */
+.button__container {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  font-size: 1rem;
+  gap: 1.5rem;
+}
+/* buttons items */
+.button__item {
+  padding: 24px;
+  border-radius: 24px;
+  color: white;
+  background-color: var(--dark-blue-300);
+}
+.button__item:hover {
+  background-color: var(--dark-blue-400);
+}
+/* modifiers  */
+.button__item {
+  padding: 24px;
+  border-radius: 24px;
+  width: 328px;
+}
+.button__item--dark {
+  @extend .button__item;
+  background-color: var(--dark-blue-300);
+}
+.button__item--light {
+  @extend .button__item;
+  color: var(--dark-blue-300);
+  background-color: transparent;
+}
+.button__item--dark:hover {
+  @extend .button__item;
+  color: white;
+  background-color: var(--dark-blue-400);
+}
+.button__item--light:hover {
+  @extend .button__item;
+  background-color: var(--light-blue-200);
+  color: var(--dark-blue-300);
+  border: 2px solid var(--dark-blue-300);
+}
+/* style options */
+.button-dark {
+  background-color: var(--dark-blue-300);
+  color: white;
+  border: none;
+}
+.button-dark:hover {
+  background-color: var(--dark-blue-400);
+  color: white;
+  border: none;
+}
+.button-light {
+  border: 2px solid var(--dark-blue-300);
+  color: var(--dark-blue-300);
+  background-color: transparent;
+}
+.button-light:hover {
+  border: 2px solid var(--dark-blue-300);
+  color: var(--dark-blue-300);
+  background-color: var(--light-blue-200);
+}
+/* buttons text settings */
+.button__text {
+  padding: 0 3rem;
+}
+
