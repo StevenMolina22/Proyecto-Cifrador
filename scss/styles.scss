@@ -10,16 +10,17 @@
 body {
   background-color: var(--light-blue-100);
 }
+
 // all content app itself
 .app {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   padding: 2rem;
 }
 // content that encrypts
 .main-content {
   width: 100%;
-  height: 100%;
+  height: 90vh;
   display: flex;
   justify-content: center;
   padding: 2rem;
@@ -48,7 +49,6 @@ body {
 .side-content {
   background-color: white;
   width: 400px;
-  height: 100%;
   border-radius: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle dark shadow */
   // if not encrypted content
@@ -57,7 +57,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    height: 100%;
     width: 100%;
   }
   .side-content__p--medium {
@@ -69,7 +68,6 @@ body {
   }
   // if encrypted
   .side-content--active {
-    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -79,7 +77,16 @@ body {
   }
   .side-content__text--active {
     font-size: 1.5rem;
+    word-wrap: break-word; /* Allow words to break and wrap */
+    max-width: 100%; /* Ensure the text doesn't overflow the container */
   }
+}
+.side-content__p--active {
+  word-wrap: break-word;
+  max-width: 100%;
+}
+.main-content {
+  margin-top: auto;
 }
 
 @media (max-width: 1300px) {
@@ -89,7 +96,7 @@ body {
   // to encrypt content
   .main-content {
     width: 100%;
-    height: 70%;
+    height: 68vh;
     // bottom content
     .bottom-content {
       gap: 0.5rem;
@@ -103,29 +110,23 @@ body {
   // encrypted content
   .side-content {
     width: 100%;
-    height: 20%;
+    min-height: 20%;
 
     // if not encrypted content
-    .side-content--inactive {
-    }
+    // .side-content--inactive {
+    // }
     .side-content__img {
       display: none;
     }
     // if encrypted
-    .side-content--active {
-    }
+    // .side-content--active {
+    // }
   }
 }
 
 @media (max-width: 700px) {
   .app {
     flex-direction: column;
-  }
-  // to encrypt content
-  .main-content {
-    width: 100%;
-    height: 70%;
-    // background-color: antiquewhite;
   }
   .button__container {
     flex-direction: column;
@@ -134,14 +135,14 @@ body {
   // encrypted content
   .side-content {
     // if not encrypted content
-    .side-content--inactive {
-    }
+    // .side-content--inactive {
+    // }
     .side-content__img {
       display: none;
     }
     // if encrypted
-    .side-content--active {
-    }
+    // .side-content--active {
+    // }
   }
 }
 

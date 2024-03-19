@@ -13,7 +13,7 @@
         <img class="logo__img" src="assets/images/logo.png" alt="alura-logo" />
       </div>
 
-      <!-- main app content -->
+      <!-- --- encrypter/decrypter section -->
       <main class="main-content">
         <!-- main form -->
         <div class="main-content__wrapper">
@@ -57,16 +57,22 @@
         </div>
       </main>
 
-      <!-- side content -->
+      <!-- ------ -->
+      <!-- resolved message content  -->
       <div class="side-content">
         <!-- if content -->
         <div id="sideContentCrypted" class="side-content--active hidden">
-          <div id="sideContentText" class="side-content__text--active"></div>
+          <div class="side-content__text--active">
+            <p id="sideContentText" class="side-content__p--active"></p>
+          </div>
           <div class="button__container">
-            <button onclick="copyTextToClipBoard()" class="button__item--light">Copiar</button>
+            <button onclick="copyTextToClipBoard()" class="button__item--light">
+              Copiar
+            </button>
           </div>
         </div>
-        <!-- if not content -->
+
+        <!--style if not content -->
         <div id="sideContentEmpty" class="side-content--inactive centered-both">
           <img
             class="side-content__img"

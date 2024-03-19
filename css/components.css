@@ -25,6 +25,12 @@
   border-radius: 24px;
   width: 328px;
 }
+@media (max-width: 416px) {
+  .button__item, .button__item--light:hover, .button__item--dark:hover, .button__item--light, .button__item--dark {
+    width: 100%;
+    min-width: 240px;
+  }
+}
 
 .button__item--dark {
   background-color: var(--dark-blue-300);
